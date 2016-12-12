@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: com.optilogistic.rental.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.optilogistic.rental.ui.RentalUIActivator
+Bundle-Vendor: OPTILOGISTIC
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.optilogistic.rental.core;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

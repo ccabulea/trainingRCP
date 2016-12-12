@@ -31,7 +31,7 @@ public class RentalCoreActivator implements BundleActivator {
 		RentalCoreActivator.context = null;
 	}
 	
-	public RentalAgency getAgency()
+	public static RentalAgency getAgency()
 	{
 		return rentalAgency;
 	}
