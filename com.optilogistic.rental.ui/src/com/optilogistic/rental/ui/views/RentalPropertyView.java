@@ -3,18 +3,24 @@ package com.optilogistic.rental.ui.views;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Rental;
 import com.optilogistic.rental.core.RentalCoreActivator;
 
-public class RentalPropertyView extends ViewPart {
+public class RentalPropertyView extends ViewPart implements ISelectionListener{
 
 	private Label rentedObjectLabel;
 	private Label customerLabel;
@@ -66,7 +72,7 @@ public class RentalPropertyView extends ViewPart {
 		endDateValLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1));
 		new Label(parent, SWT.NONE);
 		
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		//setRental(RentalCoreActivator.getAgency().getRentals().get(0));
 	}
 
 	@Override
@@ -87,5 +93,29 @@ public class RentalPropertyView extends ViewPart {
 		}
 
 
+	}
+	@Override
+	public void init(IViewSite site) throws PartInitException {
+		super.init(site);
+		site.getPage().addSelectionListener(this);
+	}
+	
+	@Override
+	public void dispose() {
+		getSite().getPage().removeSelectionListener(this);
+		super.dispose();
+	}
+
+	@Override
+	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+		if(selection instanceof IStructuredSelection)
+		{
+			Object selected = ((IStructuredSelection) selection).getFirstElement();
+			if(selected instanceof Rental)
+			{
+				setRental((Rental)selected);
+			}
+		}
+		
 	}
 }
