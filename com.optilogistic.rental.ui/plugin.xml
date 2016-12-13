@@ -14,6 +14,13 @@
             name="Rental Property"
             restorable="true">
       </view>
+      <view
+            category="com.optilogistic.rental.ui.category"
+            class="com.optilogistic.rental.ui.views.RentalAgencyView"
+            id="com.optilogistic.rental.ui.rentalAgencyView"
+            name="Rental Agency"
+            restorable="true">
+      </view>
    </extension>
 
 </plugin>
