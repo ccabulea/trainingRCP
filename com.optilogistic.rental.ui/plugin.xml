@@ -32,6 +32,11 @@
             id="com.optilogistic.rental.ui.perspective"
             name="Rental Perspective">
       </perspective>
+      <perspective
+            class="com.optilogistic.rental.ui.perspectives.RentalPerspective"
+            id="com.optilogistic.rental.ui.perspectives.RentalPerspective"
+            name="New Perspective">
+      </perspective>
    </extension>
 
 </plugin>
