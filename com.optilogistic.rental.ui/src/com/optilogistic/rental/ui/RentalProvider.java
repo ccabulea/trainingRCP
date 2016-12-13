@@ -8,6 +8,7 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
@@ -15,7 +16,7 @@ import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider{
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants{
 
 	@Override
 	public Object[] getElements(Object inputElement) {
@@ -105,6 +106,27 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_CYAN);
 		}
 		return null;
+	}
+	
+	@Override
+	public Image getImage(Object element) {
+		if(element instanceof RentalAgency)
+		{
+			return RentalUIActivator.getDefault().getImageRegistry().get(IMG_AGENCY);
+		}
+		if(element instanceof Customer)
+		{
+			return RentalUIActivator.getDefault().getImageRegistry().get(IMG_CUSTOMER);
+		}
+		if(element instanceof Rental)
+		{
+			return RentalUIActivator.getDefault().getImageRegistry().get(IMG_RENTAL);
+		}
+		if(element instanceof RentalObject)
+		{
+			return RentalUIActivator.getDefault().getImageRegistry().get(IMG_RENTAL_OBJECT);
+		}
+		return super.getImage(element);
 	}
 	
 	public class Node{
