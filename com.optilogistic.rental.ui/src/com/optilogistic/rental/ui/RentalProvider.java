@@ -85,7 +85,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		}
 		if(element instanceof RentalObject)
 		{
-			return Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
+			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA);
 		}
 		if(element instanceof Rental)
 		{
@@ -99,6 +99,10 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		if(element instanceof RentalAgency)
 		{
 			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
+		}
+		if(element instanceof Node)
+		{
+			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_CYAN);
 		}
 		return null;
 	}
