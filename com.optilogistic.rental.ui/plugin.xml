@@ -10,6 +10,7 @@
       <view
             category="com.optilogistic.rental.ui.category"
             class="com.optilogistic.rental.ui.views.RentalPropertyView"
+            icon="icons/Rentals.png"
             id="com.optilogistic.rental.ui.propertyView"
             name="Rental Property"
             restorable="true">
@@ -17,10 +18,20 @@
       <view
             category="com.optilogistic.rental.ui.category"
             class="com.optilogistic.rental.ui.views.RentalAgencyView"
+            icon="icons/Agency.png"
             id="com.optilogistic.rental.ui.rentalAgencyView"
             name="Rental Agency"
             restorable="true">
       </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.optilogistic.rental.ui.perspective.RentalPerspective"
+            icon="icons/optional.gif"
+            id="com.optilogistic.rental.ui.perspective"
+            name="Rental Perspective">
+      </perspective>
    </extension>
 
 </plugin>
