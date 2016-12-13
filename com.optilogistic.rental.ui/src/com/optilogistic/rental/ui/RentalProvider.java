@@ -3,15 +3,19 @@ package com.optilogistic.rental.ui;
 
 import java.util.Collection;
 
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider{
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider{
 
 	@Override
 	public Object[] getElements(Object inputElement) {
@@ -73,6 +77,32 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		return super.getText(element);
 	}
 	
+	@Override
+	public Color getForeground(Object element) {
+		if(element instanceof Customer)
+		{
+			return Display.getCurrent().getSystemColor(SWT.COLOR_RED);
+		}
+		if(element instanceof RentalObject)
+		{
+			return Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
+		}
+		if(element instanceof Rental)
+		{
+			return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
+		}
+		return null;
+	}
+
+	@Override
+	public Color getBackground(Object element) {
+		if(element instanceof RentalAgency)
+		{
+			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
+		}
+		return null;
+	}
+	
 	public class Node{
 		public static final String OBJECTS_A_LOUER = "Objects a louer";
 		public static final String LOCATIONS = "Locations";
@@ -107,4 +137,6 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 			return this.label;
 		}
 	}
+
+
 }
