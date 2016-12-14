@@ -10,4 +10,5 @@ Require-Bundle: org.eclipse.ui,
  com.optilogistic.rental.core;bundle-version="1.0.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: com.optilogistic.rental.ui
+Export-Package: com.optilogistic.rental.ui,
+ com.optilogistic.rental.ui.perspective
