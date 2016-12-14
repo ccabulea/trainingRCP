@@ -44,7 +44,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener{
 		parent.setLayout(gl_parent);
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
-		infoGroup.setText("Informations");
+		infoGroup.setText(Messages.RentalPropertyView_0);
 		infoGroup.setLayout(new GridLayout(2, false));
 		
 		rentedObjectLabel = new Label(infoGroup, SWT.NONE);
@@ -55,7 +55,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener{
 		rentedObjectLabel.setLayoutData(gd);
 		
 		Label infoLabel = new Label(infoGroup, SWT.NONE);
-		infoLabel.setText("Loue a: ");
+		infoLabel.setText(Messages.RentalPropertyView_1);
 		
 		customerLabel = new Label(infoGroup, SWT.NONE);
 		
@@ -63,16 +63,16 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener{
 		datesGroup.setLayout(new GridLayout(2, false));
 		GridData gd_datesGroup = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
 		datesGroup.setLayoutData(gd_datesGroup);
-		datesGroup.setText("Dates de location");
+		datesGroup.setText(Messages.RentalPropertyView_2);
 		
 		Label startDateLabel = new Label(datesGroup, SWT.NONE);
-		startDateLabel.setText("du:");
+		startDateLabel.setText(Messages.RentalPropertyView_3);
 		
 		startDateValLabel = new Label(datesGroup, SWT.NONE);
 		startDateValLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1));
 		
 		Label endDateLabel = new Label(datesGroup, SWT.NONE);
-		endDateLabel.setText("au:");
+		endDateLabel.setText(Messages.RentalPropertyView_4);
 		
 		endDateValLabel = new Label(datesGroup, SWT.NONE);
 		endDateValLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1));
@@ -98,7 +98,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener{
 		rentedObjectLabel.setText(rental.getRentedObject().getName());
 		customerLabel.setText(rental.getCustomer().getDisplayName());
 		
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); //$NON-NLS-1$
 		startDateValLabel.setText(dateFormat.format(rental.getStartDate()));
 		endDateValLabel.setText(dateFormat.format(rental.getEndDate()));
 		}
