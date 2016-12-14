@@ -5,14 +5,14 @@
          point="org.eclipse.ui.views">
       <category
             id="com.optilogistic.rental.ui.category"
-            name="Rental">
+            name="%category.name">
       </category>
       <view
             category="com.optilogistic.rental.ui.category"
             class="com.optilogistic.rental.ui.views.RentalPropertyView"
             icon="icons/Rentals.png"
             id="com.optilogistic.rental.ui.propertyView"
-            name="Rental Property"
+            name="%view.name"
             restorable="true">
       </view>
       <view
@@ -20,7 +20,7 @@
             class="com.optilogistic.rental.ui.views.RentalAgencyView"
             icon="icons/Agency.png"
             id="com.optilogistic.rental.ui.rentalAgencyView"
-            name="Rental Agency"
+            name="%view.name.0"
             restorable="true">
       </view>
    </extension>
@@ -30,12 +30,7 @@
             class="com.optilogistic.rental.ui.perspective.RentalPerspective"
             icon="icons/optional.gif"
             id="com.optilogistic.rental.ui.perspective"
-            name="Rental Perspective">
-      </perspective>
-      <perspective
-            class="com.optilogistic.rental.ui.perspectives.RentalPerspective"
-            id="com.optilogistic.rental.ui.perspectives.RentalPerspective"
-            name="New Perspective">
+            name="%perspective.name">
       </perspective>
    </extension>
    <extension
@@ -43,7 +38,7 @@
       <page
             class="com.optilogistic.rental.ui.pref.RentalColorPreferences"
             id="com.optilogistic.rental.ui.colorprefpage"
-            name="Colors">
+            name="%page.name">
       </page>
    </extension>
    <extension
@@ -56,7 +51,7 @@
          point="org.eclipse.ui.commands">
       <command
             id="com.optilogistic.rental.ui.helloWorldCommand"
-            name="Hello World Command">
+            name="%command.name">
       </command>
    </extension>
    <extension
@@ -73,7 +68,7 @@
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
          <command
                commandId="com.optilogistic.rental.ui.helloWorldCommand"
-               label="Hello World Command"
+               label="%command.label"
                style="push">
          </command>
       </menuContribution>
@@ -82,7 +77,7 @@
             locationURI="popup:com.optilogistic.rental.ui.rentalAgencyView?after=additions">
          <command
                commandId="com.optilogistic.rental.ui.helloWorldCommand"
-               label="Hello World"
+               label="%command.label.0"
                style="push">
          </command>
       </menuContribution>
@@ -91,7 +86,7 @@
             locationURI="menu:org.eclipse.ui.views.ResourceNavigator?after=additions">
          <command
                commandId="com.optilogistic.rental.ui.helloWorldCommand"
-               label="Hello World"
+               label="%command.label.1"
                style="push">
          </command>
       </menuContribution>
