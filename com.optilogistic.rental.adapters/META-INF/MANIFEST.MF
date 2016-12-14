@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adapters
+Bundle-SymbolicName: com.optilogistic.rental.adapters;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: OPTILOGISTIC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.equinox.registry,
+ com.optilogistic.rental.core;bundle-version="1.0.0",
+ org.eclipse.core.runtime;bundle-version="3.12.0"
