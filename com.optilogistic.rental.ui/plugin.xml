@@ -52,5 +52,49 @@
             class="com.optilogistic.rental.ui.pref.PreferenceInitializer">
       </initializer>
    </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.optilogistic.rental.ui.helloWorldCommand"
+            name="Hello World Command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="HelloWorldHandler"
+            commandId="com.optilogistic.rental.ui.helloWorldCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <command
+               commandId="com.optilogistic.rental.ui.helloWorldCommand"
+               label="Hello World Command"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.optilogistic.rental.ui.rentalAgencyView?after=additions">
+         <command
+               commandId="com.optilogistic.rental.ui.helloWorldCommand"
+               label="Hello World"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.views.ResourceNavigator?after=additions">
+         <command
+               commandId="com.optilogistic.rental.ui.helloWorldCommand"
+               label="Hello World"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
 
 </plugin>

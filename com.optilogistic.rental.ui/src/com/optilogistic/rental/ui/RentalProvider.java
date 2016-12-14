@@ -184,6 +184,8 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		private RentalProvider getOuterType() {
 			return RentalProvider.this;
 		}
+		
+		//override hashcode and equals => not collapse tree when color is changed
 		@Override
 		public int hashCode() {
 			final int prime = 31;
