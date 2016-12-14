@@ -7,6 +7,7 @@ Bundle-Activator: com.optilogistic.rental.ui.RentalUIActivator
 Bundle-Vendor: OPTILOGISTIC
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- com.optilogistic.rental.core;bundle-version="1.0.0"
+ com.optilogistic.rental.core;bundle-version="1.0.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: com.optilogistic.rental.ui
