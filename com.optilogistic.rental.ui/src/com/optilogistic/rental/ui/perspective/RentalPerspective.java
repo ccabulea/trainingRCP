@@ -16,7 +16,8 @@ public class RentalPerspective implements IPerspectiveFactory {
 		addViewShortcuts(layout);
 		addPerspectiveShortcuts(layout);
 		layout.addView("com.optilogistic.rental.ui.rentalAgencyView", IPageLayout.LEFT, 0.5f, IPageLayout.ID_EDITOR_AREA);
-		layout.addView("com.optilogistic.rental.ui.propertyView", IPageLayout.RIGHT, 0.5f, IPageLayout.ID_EDITOR_AREA);
+		layout.addView("com.optilogistic.rental.ui.propertyView", IPageLayout.RIGHT, 0.05f, IPageLayout.ID_EDITOR_AREA);
+		layout.addView("com.optilogistic.rental.ui.customerPropertyView", IPageLayout.BOTTOM, 0.5f, "com.optilogistic.rental.ui.propertyView");
 	}
 
 	/**
