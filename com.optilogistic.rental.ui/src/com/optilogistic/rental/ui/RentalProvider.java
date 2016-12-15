@@ -83,35 +83,17 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	
 	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof Customer)
-		{
-			//return Display.getCurrent().getSystemColor(SWT.COLOR_RED);
-			return getAColor(RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_CUSTOMER_COLOR));
-		}
-		if(element instanceof RentalObject)
-		{
-			//return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA);
-			return getAColor(RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_RENTAL_COLOR));
-		}
-		if(element instanceof Rental)
-		{
-			//return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);
-			return getAColor(RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_RENTAL_OBJECT_COLOR));
-		}
-		return null;
+		
+		String id = RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_PALETTE);
+		Palette palette = RentalUIActivator.getDefault().getPaletteManager().get(id);
+		return palette.getProvider().getForeground(element);
 	}
 
 	@Override
 	public Color getBackground(Object element) {
-		if(element instanceof RentalAgency)
-		{
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_GREEN);
-		}
-		if(element instanceof Node)
-		{
-			return Display.getCurrent().getSystemColor(SWT.COLOR_DARK_CYAN);
-		}
-		return null;
+		String id = RentalUIActivator.getDefault().getPreferenceStore().getString(PREF_PALETTE);
+		Palette palette = RentalUIActivator.getDefault().getPaletteManager().get(id);
+		return palette.getProvider().getBackground(element);
 	}
 	
 	@Override

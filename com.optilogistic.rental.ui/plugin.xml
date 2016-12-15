@@ -44,9 +44,15 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
+            category="com.optilogistic.rental.ui.pagePalettes"
             class="com.optilogistic.rental.ui.pref.RentalColorPreferences"
             id="com.optilogistic.rental.ui.colorprefpage"
             name="%page.name">
+      </page>
+      <page
+            class="com.optilogistic.rental.ui.pref.RentalPalettePreferences"
+            id="com.optilogistic.rental.ui.pagePalettes"
+            name="Palettes">
       </page>
    </extension>
    <extension

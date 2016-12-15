@@ -105,5 +105,9 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 			{}
 		}
 	}
+
+	public Map<String, Palette> getPaletteManager() {
+		return palettes;
+	}
 	
 }
