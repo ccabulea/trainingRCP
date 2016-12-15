@@ -6,7 +6,7 @@
 <booleanAttribute key="automaticAdd" value="true"/>
 <booleanAttribute key="automaticValidate" value="false"/>
 <stringAttribute key="bootstrap" value=""/>
-<stringAttribute key="checked" value="org.eclipse.core.expressions"/>
+<stringAttribute key="checked" value="[NONE]"/>
 <booleanAttribute key="clearConfig" value="false"/>
 <booleanAttribute key="clearws" value="false"/>
 <booleanAttribute key="clearwslog" value="false"/>
@@ -29,11 +29,11 @@
 <stringAttribute key="selected_workspace_plugins" value="com.optilogistic.rental.adapters@default:true,com.optilogistic.rental.core@default:default,com.optilogistic.rental.help@default:default,com.optilogistic.rental.rcp@default:default,com.optilogistic.rental.ui.cmd@default:default,com.optilogistic.rental.ui.es@default:false,com.optilogistic.rental.ui@default:default"/>
 <booleanAttribute key="show_selected_only" value="false"/>
 <stringAttribute key="templateConfig" value="${target_home}\configuration\config.ini"/>
-<booleanAttribute key="tracing" value="true"/>
+<booleanAttribute key="tracing" value="false"/>
 <mapAttribute key="tracingOptions">
 <mapEntry key="org.eclipse.core.contenttype/debug" value="false"/>
 <mapEntry key="org.eclipse.core.expressions/debug/TypeExtensionManager" value="false"/>
-<mapEntry key="org.eclipse.core.expressions/tracePropertyResolving" value="true"/>
+<mapEntry key="org.eclipse.core.expressions/tracePropertyResolving" value="false"/>
 <mapEntry key="org.eclipse.core.jobs/jobs" value="false"/>
 <mapEntry key="org.eclipse.core.jobs/jobs/beginend" value="false"/>
 <mapEntry key="org.eclipse.core.jobs/jobs/errorondeadlock" value="false"/>

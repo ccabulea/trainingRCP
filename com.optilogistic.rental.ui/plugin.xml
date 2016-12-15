@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <category
@@ -97,6 +98,19 @@
                style="push">
          </command>
       </menuContribution>
+   </extension>
+   <extension
+         point="com.optilogistic.rental.ui.Palette">
+      <Palette
+            id="com.optilogistic.rental.ui.palettedefault"
+            name="Default"
+            paletteClass="com.optilogistic.rental.ui.palette.DefaultPalette">
+      </Palette>
+      <Palette
+            id="com.optilogistic.rental.ui.paletteblue"
+            name="BluePalette"
+            paletteClass="com.optilogistic.rental.ui.palette.BluePalette">
+      </Palette>
    </extension>
 
 </plugin>

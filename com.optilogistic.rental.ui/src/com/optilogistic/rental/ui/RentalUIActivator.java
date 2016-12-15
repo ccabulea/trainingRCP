@@ -1,7 +1,14 @@
 package com.optilogistic.rental.ui;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
@@ -18,6 +25,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 	// The shared instance
 	private static RentalUIActivator plugin;
 	
+	private Map<String, Palette> palettes = new HashMap<>();
+	
 	/**
 	 * The constructor
 	 */
@@ -31,6 +40,8 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		getExtensionsQuickAccess();
+		initPalettes();
 	}
 
 	/*
@@ -62,4 +73,37 @@ public class RentalUIActivator extends AbstractUIPlugin implements RentalUIConst
 		reg.put(IMG_AGENCY, ImageDescriptor.createFromURL(b.getEntry(IMG_AGENCY)));
 	}
 
+	private void getExtensionsQuickAccess()
+	{
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		for(IConfigurationElement e : reg.getConfigurationElementsFor("org.eclipse.ui.views"))
+		{
+			if(e.getName().equals("view"))
+			{
+				System.out.println("plugin: " + e.getNamespaceIdentifier()+" vue: "+e.getAttribute("name"));
+			}
+		}
+	}
+	
+	private void initPalettes()
+	{
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+		for(IConfigurationElement e : reg.getConfigurationElementsFor("com.optilogistic.rental.ui.Palette"))
+		{
+			try{
+			Palette p = new Palette();
+			p.setId(e.getAttribute("id"));
+			p.setName(e.getAttribute("name"));
+			
+			p.setProvider((IColorProvider)e.createExecutableExtension("paletteClass"));
+			
+			palettes.put(p.getId(), p);
+			
+			System.out.println("The palette with the name "+p.getName()+" was added to the map");
+			
+			}catch(Exception exception)
+			{}
+		}
+	}
+	
 }
