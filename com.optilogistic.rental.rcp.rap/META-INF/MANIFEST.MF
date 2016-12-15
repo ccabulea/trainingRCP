@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rap
+Bundle-SymbolicName: com.optilogistic.rental.rcp.rap;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: com.optilogistic.rental.rcp;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
